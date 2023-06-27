@@ -1,0 +1,16 @@
+
+.swiper {
+    width: 100%;
+    padding: '18px 70px 18px 70px';
+    background-color: '#004A80';
+    height:'240px',
+  }
+  
+  .swiper-slide {
+    text-align: center;
+ /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

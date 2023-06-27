@@ -1,0 +1,18 @@
+.close{
+    text-align: right;
+}
+
+#link{
+    text-decoration: none;
+    color: white;
+}
+@media only screen and (max-width: 420px) {
+    #link {
+     font-size: 10px;
+    }
+  }
+  @media only screen and (max-width: 281px) {
+    #link {
+     font-size: 9px;
+    }
+  }
