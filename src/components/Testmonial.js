@@ -1,11 +1,10 @@
 import React from 'react';
-import { Stack} from '@mui/material';
 import person1 from '../assets/images/person1.png';
 import person2 from '../assets/images/person2.png';
 import person3 from '../assets/images/person3.png'
 import {
   StyledBox, Heading, Paragraph, StyledDiv, Styleddiv,
-  Image, StyledTypo, Div, StyledPara, StyledStack
+  Image, StyledTypo, StyledContainer, StyledPara, StyledStack
 } from '../style/Testominal';
 
 const Testmonial = () => {
@@ -24,23 +23,23 @@ const Testmonial = () => {
           <StyledDiv>
             <Image src={person1} alt=''></Image>
             <StyledTypo>Name</StyledTypo>
-            <Div>
+            <StyledContainer>
               <StyledPara>Lorem Ipsum is simply dummy textof the printing and typesetting industry.</StyledPara>
-            </Div>
+            </StyledContainer>
           </StyledDiv>
           <StyledDiv>
             <Image src={person2} alt=''></Image>
             <StyledTypo>Name</StyledTypo>
-            <Div>
+            <StyledContainer>
               <StyledPara>Lorem Ipsum is simply dummy textof the printing and typesetting industry.</StyledPara>
-            </Div>
+            </StyledContainer>
           </StyledDiv>
           <StyledDiv>
             <Image src={person3} alt=''></Image>
             <StyledTypo>Name</StyledTypo>
-            <Div>
+            <StyledContainer>
               <StyledPara>Lorem Ipsum is simply dummy textof the printing and typesetting industry.</StyledPara>
-            </Div>
+            </StyledContainer>
           </StyledDiv>
         </StyledStack>
       </Styleddiv >

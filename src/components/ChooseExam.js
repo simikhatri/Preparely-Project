@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledBox,StyledDiv, Heading, Paragraph } from '../style/ChooseExam';
+import { StyledBox, StyledDiv, Heading, Paragraph } from '../style/ChooseExam';
 
 const ChooseExam = () => {
     return (
@@ -10,14 +10,14 @@ const ChooseExam = () => {
                         Choose Your Exam
                     </Heading>
                     <Paragraph variant='p'>
-                        Improve your knowledge by using our examination’s <br/>
-                        systematic learning technique.<br/>
-                        Select a field of study.<br/>
-                        <br/>
+                        Improve your knowledge by using our examination’s <br />
+                        systematic learning technique.<br />
+                        Select a field of study.<br />
+                        <br />
                     </Paragraph>
                     <Paragraph variant='p'>
-                        Improve your knowledge by using our examination’s<br/>
-                        systematic learning technique.<br/>
+                        Improve your knowledge by using our examination’s<br />
+                        systematic learning technique.<br />
                         Select a field of study.
                     </Paragraph>
                 </StyledDiv>

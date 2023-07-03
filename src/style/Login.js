@@ -6,24 +6,24 @@ export const StyledBox = styled(Box)(({ theme }) => ({
     transform: 'translate(-50%, -50%)',
     width: '70%',
     height: '84%',
-    background: 'linear-gradient(rgba(0, 74, 128, 0.9) , rgba(255, 255, 255, 1))',
+    background: 'linear-gradient(rgba(0, 74, 128, 0.98) , rgba(255, 255, 255, 1))',
     boxShadow: 24,
     p: 4,
     [theme.breakpoints.down("913")]: {
-        height: '40%'
+        height: '90%'
     },
     [theme.breakpoints.down("md")]: {
-        height: '45%'
+        height: '90%'
     },
     [theme.breakpoints.down("sm")]: {
-        height: '75%'
+        height: '95%'
     },
     [theme.breakpoints.down("420")]: {
-        height: '55%',
+        height: '90%',
         width: '90%',
     },
     [theme.breakpoints.down("380")]: {
-        height: '70%',
+        height: '90%',
     },
 
 }))

@@ -41,7 +41,7 @@ export const StyledBox = styled(Box)(({ theme }) => ({
 }))
 export const StyledTypography = styled(Typography)(({ theme }) => ({
     fontFamily: 'Montserrat',
-    fontSize: ' 20px',
+    fontSize: ' 19px',
     fontWeight: '400',
     lineHeight: '30px',
     letterSpacing: '0.047em',

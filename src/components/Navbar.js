@@ -1,10 +1,12 @@
 import React from 'react'
 import {
     Box, Toolbar, Button, IconButton, Typography,
-    InputBase, InputAdornment} from '@mui/material';
+    InputBase, InputAdornment
+} from '@mui/material';
 import {
     StyledAppbar, StyledStack, Styledbutton,
-    Search, Image} from '../style/Appbar';
+    Search, Image
+} from '../style/Appbar';
 import SearchIcon from '@mui/icons-material/Search';
 import logo from '../assets/images/logo.png'
 import CustomDrawer from './CustomDrawer';
@@ -13,6 +15,9 @@ import '../assets/style/style.css'
 import Login from './Login';
 
 const Navbar = () => {
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
     return (
         <>
             <StyledAppbar position='sticky'>
@@ -43,7 +48,12 @@ const Navbar = () => {
                     <Styledbutton variant="outlined">
                         <Link id='link' to='/Register'> Register</Link>
                     </Styledbutton>
-                    <Login />
+                    <Styledbutton variant="outlined"
+                        onClick={handleOpen}
+                    >
+                        Login
+                    </Styledbutton>
+                    <Login open={open} onClose={handleClose} />
                     <Box>
                         <CustomDrawer />
                     </Box>

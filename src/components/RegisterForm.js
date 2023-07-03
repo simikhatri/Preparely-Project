@@ -2,7 +2,7 @@ import React from 'react'
 import { Grid, Checkbox, InputAdornment } from '@mui/material'
 import {
     StyledBox, Heading, StyledText, Label, StyledField,
-    Div, SignUp, Text, Span, Image, DownloadBox, StyledStack,
+    StyledDiv, SignUp, Text, Span, Image, DownloadBox, StyledStack,
     HeadText, Paragraph, StyledButton, Imag, Box1} from '../style/Rgister';
 import MobileApp from './MobileApp';
 import DownloadIcon from '@mui/icons-material/Download';
@@ -11,8 +11,12 @@ import email from "../assets/images/email.png";
 import password from "../assets/images/password.png";
 import phone from '../assets/images/phone.png'
 import google from '../assets/images/google.png';
+import Login from './Login';
 
 const RegisterForm = () => {
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
     return (
         <>
             <StyledBox>
@@ -94,16 +98,17 @@ const RegisterForm = () => {
                                 ),
                             }}
                         />
-                        <Div>
+                        <StyledDiv>
                             <Checkbox color="default" />
                             By Click Check Box You Will Get daily Updates And Special Offers
-                        </Div>
+                        </StyledDiv>
 
                         <Box1>
                           <SignUp variant="contained">Sign Up</SignUp>
                             <Text variant='h6'>Already Registered?
-                                <Span > Please Log in</Span> </Text>
+                                <Span onClick={handleOpen}> Please Log in</Span> </Text>
                         </Box1>
+                        <Login open={open} onClose={handleClose} />
 
                     </Grid>
                     {/* second row */}

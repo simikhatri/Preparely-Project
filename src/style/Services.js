@@ -17,7 +17,7 @@ export const StyledBox = styled(Box)(({ theme }) => ({
         display: 'none',
     },
 }))
-export const StyledDiv = styled("Div")(({ theme }) => ({
+export const StyledDiv = styled("div")(({ theme }) => ({
     textAlign: 'center',
     position: 'relative',
     width: '219px',
@@ -153,7 +153,7 @@ export const StyledrightBox = styled(Box)(({ theme }) => ({
         display: 'none',
     },
 }))
-export const StyledrightDiv = styled("Div")(({ theme }) => ({
+export const StyledrightDiv = styled("div")(({ theme }) => ({
     textAlign: 'center',
     position: 'relative',
     width: '219px',

@@ -15,18 +15,11 @@ import title from '../assets/images/title.png'
 import email from "../assets/images/email.png";
 import password from "../assets/images/password.png";
 
-const Login = ({ close }) => {
-    const [open, setOpen] = React.useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+const Login = ({ open, onClose }) => {
     return (
         <>
-            <Styledbutton variant="outlined" onClick={handleOpen}>
-                Login
-            </Styledbutton>
             <Modal
-                open={open}
-                onClose={handleClose}
+                open={open} onClose={onClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
@@ -70,22 +63,24 @@ const Login = ({ close }) => {
                             }}
                         />
                         <Grid container spacing={2}>
-                        <Grid item lg={3} md={4} sm={5} xs={6}>
-                         <StyledTypo> <Checkbox
-                           sx={{
-                            color: 'white',
-                            '&.Mui-checked': {
-                              color: 'white',
-                            },
-                          }}
-                           defaultChecked/> Remember Me</StyledTypo> 
-                        </Grid>
-                        <StyledGrid item lg={3} md={4} sm={5} xs={6}>
-                        <Link id='link' to='/'>Froget Password?</Link>
-                        </StyledGrid>
+                            <Grid item lg={3} md={4} sm={5} xs={6}>
+                                <StyledTypo> <Checkbox
+                                    sx={{
+                                        color: 'white',
+                                        '&.Mui-checked': {
+                                            color: 'white',
+                                        },
+                                    }}
+                                    defaultChecked /> Remember Me</StyledTypo>
+                            </Grid>
+                            <StyledGrid item lg={3} md={4} sm={5} xs={6}>
+                                <Link id='link' to='/'>Froget Password?</Link>
+                            </StyledGrid>
                         </Grid>
                         <BtnBox>
-                            <LoginButton onClick={close}>Log In</LoginButton>
+                            <LoginButton
+                            // onClick={close}
+                            >Log In</LoginButton>
                         </BtnBox>
 
                     </MainDiv>

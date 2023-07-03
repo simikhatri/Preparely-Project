@@ -4,13 +4,13 @@ import { StyledDiv, StyledBox, StyledTypography, Styledtypography } from '../sty
 const Choose = () => {
   return (
     <StyledBox>
-       <StyledDiv>
+      <StyledDiv>
         <StyledTypography >Why Choose Preparely</StyledTypography>
-        <Styledtypography variant='p'>Pakistan’s Most comprehensive Exam Preparation <br/>
-platform. On a mission to reshape <br/> the
-process of how students   Professionals prepare for competitive exams. A flexible learning<br/> 
-Environment.</Styledtypography>
-       </StyledDiv>
+        <Styledtypography variant='p'>Pakistan’s Most comprehensive Exam Preparation <br />
+          platform. On a mission to reshape <br /> the
+          process of how students   Professionals prepare for competitive exams. A flexible learning<br />
+          Environment.</Styledtypography>
+      </StyledDiv>
     </StyledBox>
   )
 }

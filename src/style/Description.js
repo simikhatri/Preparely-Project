@@ -195,20 +195,22 @@ export const Image = styled("img")(({ theme }) => ({
     height: '50px',
     [theme.breakpoints.down("sm")]: {
         height: '70px',
-        width: ' 70%',
+        width: ' 60%',
     },
     [theme.breakpoints.down("320")]: {
         height: '60px',
+        width: ' 70%',
     },
 
 }))
 export const Img = styled("img")(({ theme }) => ({
     [theme.breakpoints.down("sm")]: {
         height: '70px',
-        width: ' 70%',
+        width: ' 50%',
     },
     [theme.breakpoints.down("320")]: {
         height: '50px',
+        width: ' 70%',
     },
 }))
 export const Imag = styled("img")(({ theme }) => ({

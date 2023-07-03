@@ -74,7 +74,7 @@ export const StyledTypo = styled(Typography)(({ theme }) => ({
     lineHeight: '20px',
     color: '#373030',
 }))
-export const Div = styled("div")(({ theme }) => ({
+export const StyledContainer = styled("div")(({ theme }) => ({
     boxSizing: 'border-box',
     display: 'flex',
     textAlign: "left",

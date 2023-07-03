@@ -4,7 +4,7 @@ export const StyledBox = styled(Box)(({ theme }) => ({
   background: 'linear-gradient(180deg, #004A80 25.31%, rgba(255, 255, 255, 0.58) 60.21%)',
   padding: '2rem 1rem 2rem 2rem',
 }))
-export const Div = styled("div")(({ theme }) => ({
+export const StyledDiv = styled("div")(({ theme }) => ({
   marginLeft: '7rem',
   display: 'block',
   fontFamily: 'Montserrat',

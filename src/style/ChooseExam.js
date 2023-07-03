@@ -13,7 +13,7 @@ export const StyledBox = styled(Box)(({ theme }) => ({
     },
 }))
 
-export const StyledDiv = styled("Div")(({ theme }) => ({
+export const StyledDiv = styled("div")(({ theme }) => ({
     margin: '9rem 0 0 1rem',
     padding: '6rem 0 0 0',
     [theme.breakpoints.up("md")]: {
