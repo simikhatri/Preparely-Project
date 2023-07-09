@@ -18,6 +18,7 @@ const Navbar = () => {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+   
     return (
         <>
             <StyledAppbar position='sticky'>
@@ -28,7 +29,7 @@ const Navbar = () => {
                     <Typography sx={{ flexGrow: 1 }}></Typography>
                     <StyledStack direction='row' spacing={2} >
                         <Button disableRipple>
-                            <Link id='link' to='/'> home</Link>
+                            <Link id='link' to='/home'> home</Link>
                         </Button>
                         <Button disableRipple>
                             <Link id='link' to='/'>BLog</Link>
@@ -46,7 +47,7 @@ const Navbar = () => {
                         </Search>
                     </StyledStack>
                     <Styledbutton variant="outlined">
-                        <Link id='link' to='/Register'> Register</Link>
+                        <Link id='link' to='/'> Register</Link>
                     </Styledbutton>
                     <Styledbutton variant="outlined"
                         onClick={handleOpen}
