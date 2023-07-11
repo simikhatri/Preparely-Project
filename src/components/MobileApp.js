@@ -11,7 +11,7 @@ import logo6 from '../assets/images/logo7.png'
 const MobileApp = () => {
   return (
     <>
-      <Box >
+      <Box mt={10}>
         <Grid container spacing={1}>
           <Grid item lg={2} md={2} sm={3} xs={3}>
             <StyledDiv>

@@ -12,47 +12,47 @@ import logo from '../assets/images/logo.png';
 import title from '../assets/images/title.png'
 import email from "../assets/images/email.png";
 import password from "../assets/images/password.png";
-import { useNavigate  } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-const Login = ({ open, onClose}) => {
-    const [credentials, setCredentials] = useState({email: "", password: ""});
+const Login = ({ open, onClose }) => {
+    const [credentials, setCredentials] = useState({ email: "", password: "" });
     const navigate = useNavigate();
 
-    const onChange= (e) => {
-        setCredentials({...credentials, [e.target.name]: e.target.value})
-      }
-      const clear= (e) => {
-        setCredentials({email: "", password: ""})
-      }
-     
+    const onChange = (e) => {
+        setCredentials({ ...credentials, [e.target.name]: e.target.value })
+    }
+    const clear = (e) => {
+        setCredentials({ email: "", password: "" })
+    }
+     //Handle submit form
     const handleSubmit = async (event) => {
         event.preventDefault();
-    
+
         // Make API call to authenticate user with email and password
         try {
-          const response = await fetch('http://preparelyapi.aasecurityforce.com/preparely/user/signin', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({email: credentials.email, password: credentials.password})
-          });
-    
-          if (response.ok) {
-            // Handle successful login
-            const data = await response.json();
-            console.log('Logged in successfully!', data);
-            onClose();
-            navigate("/home");
-            clear();
-          } else {
-            // Handle failed login
-            alert('Invalid Credentials');
-          }
+            const response = await fetch('http://preparelyapi.aasecurityforce.com/preparely/user/signin', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email: credentials.email, password: credentials.password })
+            });
+            if (response.ok) {
+                // Handle successful login
+                const data = await response.json();
+                localStorage.setItem('token', data.token);
+                console.log('Logged in successfully!', data);
+                onClose();
+                navigate("/home");
+                clear();
+            } else {
+                // Handle failed login
+                alert('Invalid Credentials');
+            }
         } catch (error) {
-          console.error('Error logging in', error);
+            console.log('Invalid Credentials', error);
         }
-      };
+    };
     return (
         <>
             <Modal
@@ -72,9 +72,9 @@ const Login = ({ open, onClose}) => {
                         <Label> Email</Label>
                         <form onSubmit={handleSubmit}>
                             <StyledField
-                            name="email"
-                            value={credentials.email} onChange={onChange}
-                            required
+                                name="email"
+                                value={credentials.email} onChange={onChange}
+                                required
                                 hiddenLabel
                                 InputProps={{
                                     style: {
@@ -90,9 +90,9 @@ const Login = ({ open, onClose}) => {
                             />
                             <Label> Password</Label>
                             <StyledField
-                            name="password"
-                            value={credentials.password} onChange={onChange}
-                            required
+                                name="password"
+                                value={credentials.password} onChange={onChange}
+                                required
                                 hiddenLabel
                                 InputProps={{
                                     style: {

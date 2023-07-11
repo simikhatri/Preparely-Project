@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Grid, Checkbox, InputAdornment } from '@mui/material'
 import {
     StyledBox, Heading, StyledText, Label, StyledField,
@@ -12,11 +12,47 @@ import password from "../assets/images/password.png";
 import phone from '../assets/images/phone.png'
 import google from '../assets/images/google.png';
 import Login from './Login';
+import { useNavigate } from 'react-router-dom';
 
 const RegisterForm = () => {
-    const [open, setOpen] = React.useState(false);
+    const [credentials, setCredentials] = useState({  firstName: '', lastName: '', phonenumber: '', email: '', password: ''});
+    const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+    const navigate = useNavigate();
+
+    const onChange = (e) => {
+        setCredentials({ ...credentials, [e.target.name]: e.target.value })
+    }
+    const clear = (e) => {
+        setCredentials({firstName: "", lastName: "", phonenumber: "", email: "", password: "" })
+    }
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        // Make API call to authenticate user with email and password
+        try {
+            const response = await fetch('http://preparelyapi.aasecurityforce.com/preparely/user/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({firstName: credentials.firstName, lastName: credentials.lastName, phonenumber: credentials.phonenumber, email: credentials.email, password: credentials.password })
+            });
+            if (response.ok) {
+                // Handle successful login
+                const data = await response.json();
+                console.log('Registered successfully!', data);
+                navigate("/home");
+                clear();
+            } else {
+                // Handle failed login
+                alert('Registration failed');
+            }
+        } catch (error) {
+            console.log('Error registering', error);
+        }
+    };
     return (
         <>
             <StyledBox>
@@ -29,8 +65,12 @@ const RegisterForm = () => {
                             variant="h5">
                             Sign Up
                         </StyledText>
+                        <form onSubmit={handleSubmit}>
                         <Label> First Name</Label>
                         <StyledField
+                         name="firstName"
+                         value={credentials.firstName} onChange={onChange}
+                         required
                             hiddenLabel
                             InputProps={{
                                 style: {
@@ -55,6 +95,27 @@ const RegisterForm = () => {
                         />
                         <Label> Last Name</Label>
                         <StyledField
+                          name="lastName"
+                          value={credentials.lastName} onChange={onChange}
+                          required
+                            hiddenLabel
+                            InputProps={{
+                                style: {
+                                    borderRadius: '15px',
+                                    border: 'none'
+                                },
+                                endAdornment: (
+                                    <InputAdornment position="end"  >
+                                        <img src={image} alt="" />
+                                    </InputAdornment>
+                                ),
+                            }}
+                        />
+                         <Label> Phone No.</Label>
+                        <StyledField
+                          name="phonenumber"
+                          value={credentials.phonenumber} onChange={onChange}
+                          required
                             hiddenLabel
                             InputProps={{
                                 style: {
@@ -70,6 +131,9 @@ const RegisterForm = () => {
                         />
                         <Label> Email</Label>
                         <StyledField
+                          name="email"
+                          value={credentials.email} onChange={onChange}
+                          required
                             hiddenLabel
                             InputProps={{
                                 style: {
@@ -85,6 +149,9 @@ const RegisterForm = () => {
                         />
                         <Label> Password</Label>
                         <StyledField
+                          name="password"
+                          value={credentials.password} onChange={onChange}
+                          required
                             hiddenLabel
                             InputProps={{
                                 style: {
@@ -104,10 +171,11 @@ const RegisterForm = () => {
                         </StyledDiv>
 
                         <Box1>
-                          <SignUp variant="contained">Sign Up</SignUp>
+                          <SignUp variant="contained" type="submit">Sign Up</SignUp>
                             <Text variant='h6'>Already Registered?
                                 <Span onClick={handleOpen}> Please Log in</Span> </Text>
                         </Box1>
+                        </form>
                         <Login open={open} onClose={handleClose} />
 
                     </Grid>
