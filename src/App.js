@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Register from './pages/Register';
@@ -8,7 +8,7 @@ import './App.css';
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Navbar />
        
         <Routes>
@@ -17,7 +17,7 @@ function App() {
           {/* <Route path="/Login" element={<Login />}></Route> */}
         </Routes>
         <Footer />
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }

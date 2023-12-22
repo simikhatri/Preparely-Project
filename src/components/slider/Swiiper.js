@@ -1,6 +1,7 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
-import {Styledbox, StyledBox, StyledTypography, Image, StyledImage, } from './style';
+import {
+    Styledbox, StyledBox, StyledTypography, Image, StyledImage, } from './style';
 import { Scrollbar } from "swiper";
 import './style.css'
 import "swiper/css/scrollbar";
